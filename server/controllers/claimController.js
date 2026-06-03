@@ -21,6 +21,10 @@ const createClaim = async (req, res) => {
       return res.status(400).json({ message: 'You have already claimed this item' });
     }
 
+    if (item.status === 'resolved') {
+      return res.status(400).json({ message: 'This item has already been resolved' });
+    }
+
     const claim = await Claim.create({
       item: req.params.itemId,
       claimedBy: req.user.id,

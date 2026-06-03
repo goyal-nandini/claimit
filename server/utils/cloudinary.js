@@ -4,7 +4,6 @@ import multer from "multer";
 import env from "dotenv";
 
 env.config();
-console.log('API KEY:', process.env.CLOUDINARY_API_KEY);
 
 cloudinary.config({
   cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
@@ -20,6 +19,17 @@ const storage = new CloudinaryStorage({
   },
 });
 
-const upload = multer({ storage });
+const upload = multer({
+  storage,
+  limits: { fileSize: 5 * 1024 * 1024 }, // 5MB max
+  fileFilter: (req, file, cb) => {
+    const allowed = ['image/jpeg', 'image/png', 'image/webp', 'image/jpg'];
+    if (allowed.includes(file.mimetype)) {
+      cb(null, true);
+    } else {
+      cb(new Error('Only JPG, PNG and WEBP images are allowed'), false);
+    }
+  },
+});
 
 export { upload, cloudinary };

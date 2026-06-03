@@ -106,6 +106,9 @@ const deleteItem = async (req, res) => {
       return res.status(403).json({ message: 'Not authorized to delete this item' });
     }
 
+    await Claim.deleteMany({ item: item._id });
+    await item.deleteOne();
+
     await item.deleteOne();
     res.status(200).json({ message: 'Item deleted successfully' });
   } catch (err) {

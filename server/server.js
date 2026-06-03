@@ -5,9 +5,18 @@ import env from "dotenv";
 import authRoutes from "./routes/authRoutes.js";
 import itemRoutes from "./routes/itemRoutes.js";
 import claimRoutes from "./routes/claimRoutes.js";
+import rateLimit from "express-rate-limit";
 
 env.config();
 const app = express();
+
+const limiter = rateLimit({
+  windowMs: 60 * 60 * 1000, 
+  max: 500, 
+  message: { message: 'Too many requests, please try again later' }
+});
+
+app.use('/api', limiter);
 
 app.use(cors({
   origin: [
