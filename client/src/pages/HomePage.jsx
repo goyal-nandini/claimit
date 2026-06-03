@@ -75,7 +75,7 @@ const HomePage = () => {
     <div>
       {/*  Hero  */}
       <section className="bg-gradient-to-br from-purple-50 via-violet-50 to-indigo-50 -mx-4 sm:-mx-6 px-4 sm:px-6 py-16 border-b border-purple-100">
-        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center text-center md:text-left">
           <div className="animate-fade-up">
             {/* <span className="inline-block text-xs font-bold text-purple-600 bg-purple-100 px-3 py-1 rounded-full mb-4 tracking-wider uppercase">
               Campus Lost & Found
@@ -85,35 +85,28 @@ const HomePage = () => {
               style={{ fontFamily: "Plus Jakarta Sans" }}
             >
               Find What's Lost.
-               <br /> 
-              <span className="text-purple-600">Return What's Found.</span> 
+              <br />
+              <span className="text-purple-600">Return What's Found.</span>
             </h1>
             <p className="text-gray-500 text-lg leading-relaxed mb-8">
               Report, search and reconnect with lost belongings.
             </p>
-            <div className="flex flex-wrap gap-3">
-              <Link
-                to="/items"
-                className="btn-primary font-semibold px-6 py-3 rounded-xl text-sm"
-              >
+            <div className="flex flex-col sm:flex-row gap-3 items-center md:items-start">
+              <Link to="/items" className="btn-primary font-semibold px-6 py-3 rounded-xl text-sm w-full sm:w-auto text-center">
                 Browse Items
               </Link>
-              <Link
-                to="/post-item"
-                className="btn-outline font-semibold px-6 py-3 rounded-xl text-sm"
-              >
+              <Link to="/post-item" className="btn-outline font-semibold px-6 py-3 rounded-xl text-sm w-full sm:w-auto text-center">
                 Report Item
               </Link>
             </div>
           </div>
-          <div className="animate-fade-up delay-200 hidden md:block">
-            <div className="hidden md:flex justify-center items-center animate-fade-up delay-200">
-              <img
-                src="https://plus.unsplash.com/premium_vector-1720891748672-f7e8abfee4ca?q=80&w=1267&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                alt="Lost and found"
-                className="w-full max-w-md rounded-3xl shadow-2xl object-cover"
-              />
-            </div>
+          <div className="flex justify-center items-center animate-fade-up delay-200">
+            <img
+              src="https://plus.unsplash.com/premium_vector-1720891748672-f7e8abfee4ca?q=80&w=1267&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+
+              alt="Lost and found"
+              className="w-48 sm:w-72 max-w-xs sm:max-w-sm md:max-w-md rounded-3xl shadow-2xl object-cover"
+            />
           </div>
         </div>
       </section>
