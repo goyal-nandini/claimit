@@ -3,8 +3,6 @@ import { useParams, useNavigate } from "react-router-dom";
 import api from "../services/api";
 import { useAuth } from "../context/AuthContext";
 
-const [lightbox, setLightbox] = useState(false);
-
 const DetailRow = ({ icon, label, value }) => (
   <div className="flex items-start gap-3">
     <span className="text-lg">{icon}</span>
@@ -21,6 +19,7 @@ const ItemDetailPage = () => {
   const { id } = useParams();
   const { user } = useAuth();
   const navigate = useNavigate();
+  const [lightbox, setLightbox] = useState(false);
 
   const [item, setItem] = useState(null);
   const [loading, setLoading] = useState(true);
