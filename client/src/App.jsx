@@ -11,10 +11,12 @@ import ItemDetailPage from './pages/ItemDetailPage';
 import MyPostsPage from './pages/MyPostsPage';
 import NotFoundPage from './pages/NotFoundPage';
 import MyClaimsPage from './pages/MyClaimsPage';
+import ScrollToTop from './components/ScrollToTop';
 
 const App = () => {
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col">
+      <ScrollToTop />
       <Navbar />
       <main className="flex-1 max-w-5xl mx-auto w-full px-4 py-8">
         <Routes>
