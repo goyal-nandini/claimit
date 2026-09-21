@@ -12,6 +12,7 @@ import itemRoutes from './routes/itemRoutes.js';
 import claimRoutes from './routes/claimRoutes.js';
 
 const app = express();
+app.set('trust proxy', 1); // added this line
 
 //  Security middleware 
 app.use(cors({
