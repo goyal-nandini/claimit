@@ -1,6 +1,9 @@
 import dotenv from 'dotenv';
 dotenv.config();
 
+console.log('EMAIL_USER loaded:', !!process.env.EMAIL_USER);
+console.log('EMAIL_PASS loaded:', !!process.env.EMAIL_PASS);
+
 import express from 'express';
 import mongoose from 'mongoose';
 import cors from 'cors';
